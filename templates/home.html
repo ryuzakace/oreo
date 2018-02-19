@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}Delicious!!{% endblock title %}
+{% block stylesheets %}
+	{{ block.super }}
+	<link rel="stylesheet" type="text/css"
+		       href="{% static 'css/about.css' %}">
+{% endblock stylesheets %}
+{% block content %}
+	<a class="btn btn-primary" href="{% url 'basic:register'%}">H-O-M-E</a>
+{% endblock content %}

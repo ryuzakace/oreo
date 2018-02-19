@@ -22,6 +22,20 @@ from . import views
 app_name = 'basic'
 
 urlpatterns = [
-                url(r'^$',views.home,name = 'home')
+                url(
+                    regex = r'^$',
+                    view = views.home,
+                    name = 'home'
+                ),
+                url(
+                    regex = r'^test',
+                    view = views.test,
+                    name = 'test'
+                ),
+                url(
+                    regex = r'^register',
+                    view = views.register,
+                    name = 'register'
+                )
             ]
 
