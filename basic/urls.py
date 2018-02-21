@@ -36,6 +36,11 @@ urlpatterns = [
                     regex = r'^register',
                     view = views.register,
                     name = 'register'
+                ),
+                url(
+                    regex = r'^download',
+                    view = views.download,
+                    name = 'download'
                 )
             ]
 

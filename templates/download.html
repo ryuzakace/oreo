@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}Delicious!!{% endblock title %}
+{% block stylesheets %}
+	{{ block.super }}
+	<link rel="stylesheet" type="text/css"
+		       href="{% static 'css/about.css' %}">
+{% endblock stylesheets %}
+{% block content %}
+	<h2>Jimmy Page and Jimmy Hendrix</h2>
+	<p>They enjoy eating ice cream</p>
+{% endblock content %}
