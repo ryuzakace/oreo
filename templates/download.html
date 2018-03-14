@@ -6,7 +6,11 @@
 	<link rel="stylesheet" type="text/css"
 		       href="{% static 'css/about.css' %}">
 {% endblock stylesheets %}
-{% block content %}
+{% block content %}	
+    <form method="post">
+	    {% csrf_token %}
+	    {{ form.as_p }}
+   <button type="submit">Sign up</button>
 	<h2>Jimmy Page and Jimmy Hendrix</h2>
 	<p>They enjoy eating ice cream</p>
 {% endblock content %}

@@ -38,9 +38,9 @@ urlpatterns = [
                     name = 'register'
                 ),
                 url(
-                    regex = r'^download',
-                    view = views.download,
-                    name = 'download'
+                    regex = r'^playlist',
+                    view = views.dp,
+                    name = 'dp'
                 )
             ]
 

@@ -1,10 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from . import forms
+from .forms import DownloadForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login, authenticate
 from django.shortcuts import render, redirect
 
+from .playlist import download_playlist
 
 
 def home(req):
@@ -36,12 +37,29 @@ def register(request):
             ,{'form': form}
         )
 
+def dp(request):
+    if request.method == 'POST':
+        #form = DownloadForm(request.POST)
+        ur = request.POST['url']
+        download_playlist(ur)
+        return render(request,'home.html',{})
+    else:
+        form = DownloadForm()
+
+    return render(request,
+                'download.html',
+                {'form':form}
+            )
+
+
+
+
 def download(request):
     return render(
             request,
             'download.html',
             {}
-            )
+        )
 
 
 
